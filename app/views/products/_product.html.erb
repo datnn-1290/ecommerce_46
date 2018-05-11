@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="product-slider">
+    <div class="item">
+        <div class="product">
+            <div class="flip-container">
+                <div class="flipper">
+                  <div class="front">
+                    <a href="detail.html">
+                      <%= show_image_product product %>
+                    </a>
+                  </div>
+                  <div class="back">
+                    <a href="detail.html">
+                      <%= show_image_product product %>
+                    </a>
+                  </div>
+                </div>
+            </div>
+        <a href="detail.html" class="invisible">
+          <%= image_tag("img/product1.jpg", :class => "img-responsive" ) %>
+        </a>
+        <div class="text">
+          <h3><a href="detail.html"><%= product.name %></a></h3>
+          <p class="price"><%= product.price %></p>
+        </div>
+                                <!-- /.text -->
+        </div>
+                            <!-- /.product -->
+    </div>
+  </div>
+                    <!-- /.product-slider -->
+</div>
