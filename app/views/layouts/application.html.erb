@@ -1,14 +1,35 @@
 <!DOCTYPE html>
-<html>
   <head>
-    <title>Ecommerce</title>
+    <meta charset="utf-8">
     <%= csrf_meta_tags %>
+    <meta name="robots" content="all,follow">
+    <meta name="googlebot" content="index,follow,snippet,archive">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Obaju e-commerce template">
+    <meta name="author" content="Ondrej Svestka | ondrejsvestka.cz">
+    <meta name="keywords" content="">
+    <title><%= yield :title %></title>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100' rel='stylesheet' type='text/css'>
+
+    <%= stylesheet_link_tag "application", media: "all",
+      "data-turbolinks-track": "reload" %>
+    <%= javascript_include_tag "application", "data-turbolinks-track": "reload" %>
+    <link rel="shortcut icon" href="favicon.png">
+    <%= render "layouts/shim" %>
   </head>
-
   <body>
-    <%= yield %>
+    <%= render "layouts/header" %>
+    <%= render "layouts/navbar" %>
+    <div id="all">
+      <%= yield %>
+      <%= render "layouts/footer" %>
+    </div>
+    <script type='text/javascript'>window._sbzq||function(e){e._sbzq=[];var t=e._sbzq;
+      t.push(["_setAccount",72200]);var n=e.location.protocol=="https:"?"https:":"http:";
+      var r=document.createElement("script");r.type="text/javascript";r.async=true;
+      r.src=n+"//static.subiz.com/public/js/loader.js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)}(window);
+    </script>
   </body>
+
 </html>

@@ -1,0 +1,17 @@
+user:
+  name:
+    max_length: 50
+  email:
+    max_length: 255
+  password:
+    min_length: 6
+  address:
+    max_length: 255
+product:
+  name:
+    max_length: 255
+  limit: 4
+  min_price: 0
+  lastest_product: 4
+  lastest_month: 1
+
