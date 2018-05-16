@@ -13,6 +13,7 @@ en:
   search: "Search"
   delete: "Delete"
   update: "Update"
+  order_empty: "Empty order!"
   delete_fail: "Delete fail, please try again!"
   update_fail: "Update fail, please try again!"
   create_fail: "Create fail, please try again!"
@@ -20,6 +21,12 @@ en:
   comment_placeholer: "Comment in here ..."
   require_login_comment: "Please login to comment"
   home: "Home"
+  update: "Update"
+  delete: "Delete"
+  comment_placeholer: "Comment in here ..."
+  require_login_comment: "Please login to comment"
+  home: "Home"
+  confirm_delete: "Are you sure to delete?"
   comment_section: "Comment section"
   sold_out: "Sold out"
   product: "Products"
@@ -29,6 +36,19 @@ en:
   same_product: "You may also like these products"
   detail_product: "Detail product"
   cant_find_product: "Cannot find product"
+  carts:
+    index:
+      empty_cart: "Your cart empty!"
+      checkout: "Check out"
+      continue_shopping: "Continue shopping"
+      title: "Shopping Cart"
+  static_pages:
+    home:
+      home: "Home"
+      sign_up: "Sign up now!"
+      welcome: "Welcome to Our Store"
+      hot_products: "HOT PRODUCTS"
+      lastest_products: "LASTEST PRODUCTS"
   layouts:
     header:
       login: "Login"

@@ -1,0 +1,3 @@
+<% current_cart.each do |item| %>
+  <%= render "carts/item_cart", product: find_product_by_id(item["product_id"]), item: Item.new(item["product_id"],item["quantity"]), show_total: true %>
+<% end %>

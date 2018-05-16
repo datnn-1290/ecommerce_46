@@ -1,4 +1,5 @@
 class StaticPagesController < ApplicationController
+
   def home
     @lastest_products = Product.lastest_product Settings.home.limit
     @categories = Category.all
