@@ -18,5 +18,7 @@ product:
     max_length: 255
   limit: 4
   min_price: 0
-  lastest_product: 4
+  lastest_product: 3
   lastest_month: 1
+home:
+  limit: 3

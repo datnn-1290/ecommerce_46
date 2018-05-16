@@ -22,10 +22,11 @@
     <div class="navbar-collapse collapse" id="navigation">
 
       <ul class="nav navbar-nav navbar-left">
-        <li class="active"><a href="index.html">Home</a>
+        <li class="active"><a href="#"><%= t "home" %></a>
         </li>
         <li class="dropdown yamm-fw">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200"> Products <b class="caret"></b></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-delay="200"><%= t "product" %><b class="caret"></b></a>
+          <% if @categories.present? %>
           <ul class="dropdown-menu">
             <li>
               <div class="yamm-content">
@@ -39,6 +40,7 @@
               </div>
             </li>
           </ul>
+          <% end %>
         </li>
       </div>
       <div class="navbar-buttons">
@@ -52,20 +54,13 @@
             <i class="fa fa-search"></i>
           </button>
         </div>
-
       </div>
 
       <div class="collapse clearfix" id="search">
-
-        <form class="navbar-form" role="search">
-          <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search">
-            <span class="input-group-btn">
-
-              <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i></button>
-            </span>
-          </div>
-        </form>
+        <%= form_tag products_path, method: :get, class: "navbar-form" do %>
+        <%= text_field_tag :name, params[:name], class: "form-control" %>
+        <%= submit_tag 'Search', class: "btn btn-primary" %>
+        <% end %>
       </div>
     </div>
   </div>

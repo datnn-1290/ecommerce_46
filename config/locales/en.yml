@@ -1,6 +1,9 @@
 en:
   view_detail: "View detail"
   add_to_cart: "Add to cart"
+  home: "Home"
+  sold_out: "Sold out"
+  product: "Products"
   categories: "Categories"
   add_to_wishlist: "Add to wishlist"
   show_friends: "Show it to your friends"
