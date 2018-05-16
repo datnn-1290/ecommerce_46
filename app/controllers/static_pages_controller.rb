@@ -1,4 +1,6 @@
 class StaticPagesController < ApplicationController
+  before_action :create_cart
+
   def home
     @lastest_products = Product.lastest_product Settings.home.limit
     @categories = Category.all

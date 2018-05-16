@@ -5,8 +5,9 @@ class CategoriesController < ApplicationController
   private
 
   def load_products
-    category = Category.find_by id: params[:id]
+    category = Category.find_by id: params[:id] if params[:id]
     @products = category.products if category
+    @products
   end
 
   def load_categories

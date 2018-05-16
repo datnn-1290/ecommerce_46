@@ -16,12 +16,12 @@ class ProductsController < ApplicationController
 
   private
 
+  def load_ratings; end
+
   def load_comments
-    @comments = @product.comments.paginate page: params[:page], per_page: Settings.paginate.comment_perpage
+    @comments = @product.comments.paginate page: params[:page], per_page:Settings.paginate.comment_perpage
     @comment = current_user.comments.build if logged_in?
   end
-
-  def load_ratings; end
 
   def load_categories
     @categories = Category.all
