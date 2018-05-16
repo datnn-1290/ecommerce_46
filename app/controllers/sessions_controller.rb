@@ -1,4 +1,16 @@
 class SessionsController < ApplicationController
+
+  def callback
+    if user = User.from_facebook(request.env["omniauth.auth"])
+      flash[:success] = t "login_facebook_success"
+      session[:user_id] = user.id
+      redirect_to root_path
+    else
+      flash[:error] = t "login_facebook_error"
+      redirect_to request.referrer
+    end
+  end
+
   def new
     return unless logged_in?
     flash[:info] = t ".logged_in"

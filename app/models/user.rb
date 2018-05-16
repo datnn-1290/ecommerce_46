@@ -28,6 +28,11 @@ class User < ApplicationRecord
     BCrypt::Password.create string, cost: cost
   end
 
+  def self.from_facebook(authen)
+    email = authen[:info][:email] || "#{authen[:uid]}@facebook.com"
+    user = User.find_by email: email
+  end
+
   def self.new_token
     SecureRandom.urlsafe_base64
   end

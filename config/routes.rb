@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get "/login", to: "sessions#new"
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
+  get "auth/:provider/callback" => "sessions#callback"
   resources :account_activations, only: %i(edit)
   resources :carts, only: %(index)
   resources :categories

@@ -23,6 +23,7 @@ gem "jquery-rails"
 gem "kaminari", "~> 1.1", ">= 1.1.1"
 gem "mini_magick"
 gem "mysql2", ">= 0.3.18", "< 0.6.0"
+gem "omniauth-facebook"
 gem "puma", "~> 3.7"
 gem "rails", "~> 5.1.6"
 gem "rubocop", "~> 0.54.0", require: false

@@ -1,7 +1,6 @@
 class OrdersController < ApplicationController
   before_action :logged_in_user
   before_action :correct_user, only: %(index create)
-  # after_action :update_quantity, only: :create
 
   def index
     @cart = session[:cart]

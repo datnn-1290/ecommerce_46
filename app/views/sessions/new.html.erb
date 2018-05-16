@@ -33,8 +33,8 @@
         </div>
 
         <%= f.submit t(".login"), class: "btn btn-primary" %>
+        <%= link_to t("login_facebook"), "/auth/facebook", class: 'btn btn-primary' %>
       <% end %>
-
       <p><%= t("new_user") %> <%= link_to t("btn_signup"), signup_path %></p>
     </div>
   </div>
