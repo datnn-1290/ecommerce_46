@@ -1,6 +1,7 @@
 class OrdersController < ApplicationController
   before_action :logged_in_user
   before_action :correct_user, only: %(index create)
+  rescue_from ActiveRecord::RecordInvalid, with: :redirect_to_homepage
 
   def index
     @cart = session[:cart]
@@ -8,7 +9,11 @@ class OrdersController < ApplicationController
   end
 
   def create
-    flash[:success] = "Order success"
+    order = current_user.orders.build order_params
+    order.status = Order.statuses[:pending]
+    order.place_an_order order, session[:cart]
+    flash[:success] = t "order_success"
+    session.delete :cart
     redirect_to root_path
   end
 
@@ -29,5 +34,10 @@ class OrdersController < ApplicationController
   def order_params
     params.require(:order).permit :name, :phone, :address,
     :note
+  end
+
+  def redirect_to_homepage
+    flash[:error] = t "error"
+    redirect_to root_path
   end
 end

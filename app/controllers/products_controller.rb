@@ -13,7 +13,8 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.search_by_name params[:name] if params[:name]
+    @result = Product.search_by_name params[:name] if params[:name]
+    @products = @result.page(params[:page]).per(Settings.paginate.product_perpage)
   end
 
   private

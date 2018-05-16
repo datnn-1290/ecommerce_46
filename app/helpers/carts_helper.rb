@@ -11,11 +11,11 @@ module CartsHelper
     total
   end
 
-  def place_an_order
-    session[:cart]
-  end
+  def save_order_detail cart
+    session[:cart].each do |item|
+      order_detail = OrderDetail.new(item["product_id"], item["quantity"], item["price"], order.id)
+      order_detail.save!
+    end
 
-  def update_cart
-    session[:cart] = @cart
   end
 end
