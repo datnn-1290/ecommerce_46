@@ -1,12 +1,30 @@
 en:
   view_detail: "View detail"
   add_to_cart: "Add to cart"
+  create_fail: "Create fail"
+  comment: "Comment"
+  search: "Search"
+  update: "Update"
+  delete: "Delete"
+  comment_placeholer: "Comment in here ..."
+  require_login_comment: "Please login to comment"
+  home: "Home"
+  confirm_delete: "Are you sure to delete?"
+  comment_section: "Comment section"
+  sold_out: "Sold out"
+  product: "Products"
   categories: "Categories"
   add_to_wishlist: "Add to wishlist"
   show_friends: "Show it to your friends"
   same_product: "You may also like these products"
   detail_product: "Detail product"
   cant_find_product: "Cannot find product"
+  carts:
+    index:
+      empty_cart: "Your cart empty!"
+      checkout: "Check out"
+      continue_shopping: "Continue shopping"
+      title: "Shopping Cart"
   static_pages:
     home:
       home: "Home"
