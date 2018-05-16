@@ -1,0 +1,19 @@
+<%= form_tag item_path(item.product_id), method: :put, remote: true do %>
+<tr>
+                                            <td>
+                                                <%= link_to show_image(product), product %>
+                                            </td>
+                                            <td><a href="#"><%= item.product_id %></a>
+                                            </td>
+                                            <td>
+                                                <%= number_field_tag :quantity, item.quantity.to_i, class: "form-control", min: 1, max: product.quantity %>
+                                            </td>
+                                            <td><%= item.unit_price %> VND</td>
+                                            <td>$0.00</td>
+                                            <td><%= item.total_price %> VND</td>
+                                            <td><%= submit_tag "Update", class: "btn btn-primary" %></td>
+                                            <td>
+                                            <%= link_to t("carts.show.detete"), item_path(id: item.product_id, product_id: item.product_id), { data: { confirm: "Are you sure to delete " + "'#{product.name}'" }, method: :delete, remote: true, class: "btn btn-danger" } %>
+                                            </td>
+                                        </tr>
+<% end %>
