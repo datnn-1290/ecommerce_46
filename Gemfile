@@ -8,6 +8,8 @@ end
 gem "bcrypt", "3.1.11"
 gem "bootstrap-sass", "3.3.7"
 gem "carrierwave", "1.2.2"
+gem "cocoon"
+gem "jquery-ui-rails"
 gem "chosen-rails"
 gem "ckeditor", github: "galetahub/ckeditor"
 gem "coffee-rails", "~> 4.2"

@@ -5,6 +5,9 @@ class Product < ApplicationRecord
   has_many :ratings, dependent: :destroy
   has_many :favourites, dependent: :destroy
   has_many :order_details
+  has_many :images
+  accepts_nested_attributes_for :images, :allow_destroy => true,
+  reject_if: -> (attrs){attrs["image"].blank?}
 
   enum status: {normal: 0, hot: 1}
   mount_uploader :image, ImageUploader
@@ -19,7 +22,7 @@ class Product < ApplicationRecord
       greater_than_or_equal_to: Settings.product.min_quantity,
       only_integer: true}
   validate :image_size
-  validates :image, presence: true
+  # validates :image, presence: true
   validates :category_id, presence: true
   validates :provider_id, presence: true
 

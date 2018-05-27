@@ -3,6 +3,7 @@ class Admin::ProductsController < Admin::BaseController
 
   def new
     @product = Product.new
+    2.times{@product.images.build}
   end
 
   def create
@@ -22,8 +23,8 @@ class Admin::ProductsController < Admin::BaseController
 
   private
   def product_params
-    params.require(:product).permit :name, :price, :quantity,
-      :status, :description, :guarantee_info,
-      :image, :category_id, :provider_id
+    params.require(:product).permit(:name, :price, :quantity,
+      :status, :description, :guarantee_info, :category_id, :provider_id,
+      images_attributes:[:id, :image, :_destroy])
   end
 end
