@@ -5,7 +5,7 @@ class Order < ApplicationRecord
   validates :name, presence: true
   validates :phone, presence: true, length: {maximum: Settings.user.phone.max_length}
   validates :address, presence: true, length: {maximum: Settings.user.address.max_length}
-  enum status: [:deleted, :pending, :shipped]
+  enum status: {deleted: 0, pending: 1, shipped: 2}
   after_save :update_quantity_product
 
   private

@@ -18,6 +18,7 @@ en:
   search: "Search"
   delete: "Delete"
   update: "Update"
+  statistic: "Statistic"
   order_success: "Order success!"
   error: "Error, please try again!"
   order_empty: "Empty order!"
@@ -169,6 +170,9 @@ en:
     create:
       added: "added product to cart!"
   admin:
+    statistics:
+      index:
+        not_found_result_statistic: "Don't have result in period time!"
     layouts:
       header:
         admin: "ADMIN"
@@ -185,6 +189,7 @@ en:
         product: "Product"
         list: "List"
         create: "Create"
+        statistic: "Statistic"
     static_pages:
       home:
         dashboard: "Dashboard"

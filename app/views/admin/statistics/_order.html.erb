@@ -1,0 +1,63 @@
+<div class="panel panel-default panel-table">
+  <div class="panel-heading">
+    <div class="row">
+      <div class="col col-xs-6">
+        <h3 class="panel-title"><%= t ".panel_title" %></h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <%= paginate @orders %>
+      </div>
+    </div>
+  </div>
+  <div class="panel-body">
+    <table class="table table-striped table-bordered table-list">
+      <thead>
+        <tr>
+          <th><%= t "Index" %></th>
+          <th><%= t ".name_user" %></th>
+          <th><%= t ".phone_user" %></th>
+          <th><%= t ".address_user" %></th>
+          <th><%= t ".note" %></th>
+          <th><%= t ".status" %></th>
+          <th><%= t ".user_id" %></th>
+          <th><%= t ".created_at" %></th>
+          <th><%= t ".updated_at" %></th>
+          <th><%= t".view_detail" %></th>
+        </tr>
+      </thead>
+      <tbody>
+      <% @orders.each_with_index do |order, index| %>
+        <tr id="product-<%= order.id %>">
+          <td><%= index_for index, @orders.current_page,
+          Settings.admin.list.per_page %></td>
+          <td><%= order.name %></td>
+          <td><%= order.phone %></td>
+          <td><%= order.address %></td>
+          <td><%= order.note %></td>
+          <td>
+            <span class="label label-primary"><%= order.status %></span>
+          </td>
+          <td><%= order.user_id %></td>
+          <td><%= order.created_at %></td>
+          <td><%= order.updated_at %></td>
+          <td align="center">
+            <%= link_to admin_order_path(order) do %>
+              <i class="fa fa-eye" aria-hidden="true"></i>
+            <% end %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+
+  </div>
+  <div class="panel-footer">
+    <div class="row">
+      <div class="col col-xs-8">
+        <%= paginate @orders %>
+      </div>
+    </div>
+  </div>
+</div>

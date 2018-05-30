@@ -10,4 +10,3 @@
     <%= link_to t("delete"), item_path(id: item["product_id"], product_id: item["product_id"]), data: {confirm: t("confirm_delete") + "'#{item["name"]}'"}, method: :delete, remote: true, class: "btn btn-danger cart-item" %>
   </td>
 </tr>
-

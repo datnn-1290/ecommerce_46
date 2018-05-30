@@ -1,0 +1,16 @@
+<%= form_for :statistic, method: :get do |f| %>
+  <div class="form-group">
+    <%= f.hidden_field :type, value: "statistic_order" %>
+    <%= f.label :date_start %>
+    <%= f.date_field :date_start, class: "form-control" %>
+
+    <%= f.label :date_end %>
+    <%= f.date_field :date_end, class: "form-control" %>
+
+    <%= f.label :status %>
+    <%= f.select :status, options_for_select(["deleted", "pending", "shipped"]),{},
+          {class: "form-control"} %>
+
+    <%= f.submit t("statistic") , class: "btn btn-primary" %>
+  </div>
+<% end %>

@@ -23,5 +23,7 @@ Rails.application.routes.draw do
     resources :users, only: %i(index edit update destroy)
     resources :products
     resources :categories
+    resources :orders, only: :show
+    resources :statistics, only: %i(index)
   end
 end

@@ -1,0 +1,14 @@
+<% if @statistic_order.present?%>
+  <%= render "form_statistic_order" %>
+<% else %>
+  <%= render "form_statistic_product" %>
+<% end %>
+<% if @products.present? %>
+  <%= render "hot_products" %>
+<% elsif @orders.present?%>
+  <%= render "order" %>
+<% else %>
+  <div class = "btn btn-warning">
+    <%= t ".not_found_result_statistic" %>
+  </div>
+<% end %>
