@@ -45,3 +45,5 @@ category:
     max_length: 30
   priority:
     min_value: 1
+statistic:
+  sell_product: "sell_product"
