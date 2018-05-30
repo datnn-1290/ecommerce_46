@@ -1,4 +1,4 @@
-<%= form_for :item, url: item_path(id: item["product_id"]), method: :put, class: "form-control" do |f| %>
+<%= form_for :item, url: item_path(id: item["product_id"]), method: :put, class: "form-control", remote: true do |f| %>
   <tr>
     <td><%= link_to item["name"], product_path(id: item["product_id"]) %></td>
     <td>

@@ -1,0 +1,8 @@
+<%= render "form_statistic" %>
+<% if @products.present? %>
+  <%= render "hot_products" %>
+<% else %>
+  <div class = "btn btn-warning">
+    <%= t ".not_found_product" %>
+  </div>
+<% end %>

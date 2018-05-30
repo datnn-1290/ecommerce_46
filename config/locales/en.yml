@@ -169,6 +169,11 @@ en:
     create:
       added: "added product to cart!"
   admin:
+    statistics:
+      form_statistic:
+        statistic: "Statistic"
+      index:
+        not_found_product: "Don't have product in period time!"
     layouts:
       header:
         admin: "ADMIN"
@@ -185,6 +190,7 @@ en:
         product: "Product"
         list: "List"
         create: "Create"
+        statistic: "Statistic"
     static_pages:
       home:
         dashboard: "Dashboard"
