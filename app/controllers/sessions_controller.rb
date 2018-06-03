@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
   def new
+    session[:return_product] = params[:product_id] if params[:product_id]
     return unless logged_in?
     flash[:info] = t ".logged_in"
     redirect_to root_url
@@ -11,7 +12,13 @@ class SessionsController < ApplicationController
       if user.activated?
         log_in user
         params[:session][:remember_me] == "1" ? remember(user) : forget(user)
-        redirect_back_or root_path
+        if(session[:return_product])
+          product_id = session[:return_product]
+          session.delete :return_product
+          redirect_to product_path(id: product_id)
+        else
+          redirect_back_or root_path
+        end
       else
         flash[:warning] = t ".activate_message"
         redirect_to root_path

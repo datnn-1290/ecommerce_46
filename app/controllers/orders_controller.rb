@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :correct_user, only: %(index create)
+  before_action :check_user
   before_action :check_cart, only: :index
 
   def index
@@ -27,24 +27,17 @@ class OrdersController < ApplicationController
       order_details_attributes: [:id, :quantity, :price, :order_id, :product_id])
   end
 
-  def logged_in_user
-    unless logged_in?
-      store_location
-      flash[:danger] = t "require_login"
-      redirect_to login_url
-    end
-  end
-
   def check_cart
     redirect_to root_path unless current_cart.present?
   end
 
-  def correct_user
-    error_redirect unless current_user
-  end
-
-  def redirect_to_homepage
-    flash[:error] = t "error"
-    redirect_to root_path
+  def check_user
+    unless logged_in?
+      store_location
+      flash[:danger] = t "require_login"
+      redirect_to login_url
+    else
+      error_redirect unless current_user
+    end
   end
 end
