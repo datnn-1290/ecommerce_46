@@ -7,7 +7,7 @@
     <% end %>
   <% else %>
   <p>
-    <%= link_to t(".require_login"), login_path, class: "btn btn-default" %>
+    <%= link_to t(".require_login"), login_path(product_id: @product.id), class: "btn btn-default" %>
   </p>
   <% end %>
 </div>
